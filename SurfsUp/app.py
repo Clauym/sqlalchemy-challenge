@@ -145,6 +145,8 @@ def temp_w_end(start,end):
                 return jsonify(new_temps_dict)
             else:
                 return jsonify({"error": f"{start} or {end} dates are incorrect.Try enter dates between 2010-01-01 and 2017-08-23"}), 404 
+                #Close session
+                session.close
 
 @app.route("/")
 def welcome():
